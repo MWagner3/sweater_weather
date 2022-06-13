@@ -9,10 +9,11 @@ class BookFacade
       destination = location
       forecast = current
       total_books_found = BookService.get_books(location)[:numFound]
-      books = BookService.get_books(location)[:docs][0..(quantity - 1)].each do |book|
-        Book.new(book)
-      end
+      books = BookService.get_books(location)[:docs][0..(quantity.to_i - 1)].map do |book|
+       Book.new(book)
 
+
+      end
       BookData.new(destination, forecast, total_books_found, books)
     end
   end

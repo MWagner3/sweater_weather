@@ -10,9 +10,10 @@ RSpec.describe BookFacade do
     expect(data.total_books_found).to be_an(Integer)
     expect(data.books).to be_an(Array)
     expect(data.books.length).to eq(3)
-      # data.books.each do |book|
-      #   expect(book).to be_a(Book)
-      # end
+
+      data.books.each do |book|
+        expect(book).to be_a(Book)
+      end
   end
 end
 

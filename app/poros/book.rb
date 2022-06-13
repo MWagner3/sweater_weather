@@ -7,6 +7,6 @@ class Book
 
     @isbn = data[:isbn]
     @title = data[:title]
-    @publisher = data[:publisher][0]
+    @publisher = data[:publisher]
   end
 end

@@ -10,7 +10,7 @@ class ForecastFacade
         Daily.new(day)
       end
 
-      hourly   = forecast[:hourly][0..8].each do |hour|
+      hourly   = forecast[:hourly][0..7].each do |hour|
         Hourly.new(hour)
       end
 

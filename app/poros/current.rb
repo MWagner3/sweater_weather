@@ -12,7 +12,7 @@ class Current
               :icon
 
   def initialize(data)
-    @datetime = Time.at(data[:datetime])
+    @datetime = Time.at(data[:dt])
     @sunrise = Time.at(data[:sunrise])
     @sunset = Time.at(data[:sunset])
     @temperature = data[:temperature]

@@ -1,4 +1,4 @@
-class WeatherService
+class ForecastService
   class << self
 
     def conn
@@ -10,15 +10,16 @@ class WeatherService
       JSON.parse(response.body, symbolize_names: true)
     end
 
-    def get_forcast(lat, lon)
+    def get_weather(lat, lon)
       response = conn.get('/data/3.0/onecall') do |faraday|
         faraday.params['lat'] = lat
         faraday.params['lon'] = lon
-        required_params.params['exclude'] = 'minutely,alerts'
-        required_params.params['units'] = 'imperial'
-        required_params.params['appid'] = ENV['openweather_appid']
+        faraday.params['exclude'] = 'minutely,alerts'
+        faraday.params['units'] = 'imperial'
+        faraday.params['appid'] = ENV['openweather_appid']
       end
       parse_json(response)
     end
 
+  end
 end

@@ -4,7 +4,7 @@ class ForecastFacade
       coords   = MapQuestFacade.coords(location)
       forecast = ForecastService.get_weather(coords[:lat],coords[:lng])
 
-      current  = Current.new(forcast[:current])
+      current  = Current.new(forecast[:current])
 
       daily    = forecast[:daily][0..4].each do |day|
         Daily.new(day)

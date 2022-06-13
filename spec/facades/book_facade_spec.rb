@@ -15,3 +15,6 @@ RSpec.describe BookFacade do
       # end
   end
 end
+
+# it is being narrowed down successfully to an array of 3 books,
+# but not successfully being turned into a poro

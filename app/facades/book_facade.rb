@@ -2,15 +2,16 @@ class BookFacade
   class << self
     def book_search(location)
       coords   = MapQuestFacade.coords(location)
-      forecast = ForecastService.get_weather(coords[:lat],coords[:lng])
-
-      current  = Current.new(forecast[:current])
+      weather = ForecastService.get_weather(coords[:lat],coords[:lng])
+      current  = CurrentAbridged.new(weather[:current])
 
 
       destination = location
-      forecast =
-      total_books_found =
-      books =
+      forecast = current
+      total_books_found = BookService.get_books(location)[:numFound]
+      books = BookService.get_books(location)[:docs].each do |book|
+        Book.new(book)
+      end
 
 
 

@@ -6,11 +6,11 @@ class ForecastFacade
 
       current  = Current.new(forecast[:current])
 
-      daily    = forecast[:daily][0..4].each do |day|
+      daily    = forecast[:daily][0..4].map do |day|
         Daily.new(day)
       end
 
-      hourly   = forecast[:hourly][0..7].each do |hour|
+      hourly   = forecast[:hourly][0..7].map do |hour|
         Hourly.new(hour)
       end
 

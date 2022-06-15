@@ -4,7 +4,7 @@ class Api::V1::SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             render json: UserSerializer.new(user)
         else
-            render json: {error: 'not found'}
+            render json: {error: 'user not found'}
         end
     end
 end

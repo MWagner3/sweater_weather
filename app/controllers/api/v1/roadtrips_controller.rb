@@ -2,7 +2,7 @@ class Api::V1::RoadtripsController < ApplicationController
     def create
         if params[:origin] && params[:destination] && params[:api_key]
             trip_info = RoadtripFacade.build_roadtrip(params[:origin], params[:destination])
-            if trip_info.nil?
+            if trip_info.travel_time == nil
                 render json: {error: 'impossible route'}
             else
                 render json: RoadtripSerializer.new(trip_info)

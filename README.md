@@ -1,4 +1,4 @@
-# [Sweater Weather](https://github.com/cdelpone/sweater_weather)
+# [Sweater Weather]
 
 ## Table of contents
 - [Overview](#overview)

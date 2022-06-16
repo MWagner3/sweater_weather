@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Current do
   it 'creates a current poro' do
     current_data = {
-                    datetime:1655083227,
+                    datetime: 1655083227,
                     sunrise: 1655027154,
                     sunset: 1655080425,
                     temperature: 200,

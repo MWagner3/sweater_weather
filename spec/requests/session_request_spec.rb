@@ -5,7 +5,7 @@ RSpec.describe 'Session Requests' do
     it 'returns user data' do
       user = User.create(email: 'test@gmail.com', password: 'password123', password_confirmation: 'password123', api_key: '132w4tergydfiuxbjght')
       user_params = {
-                      email: 'pesto@fakeemail.com',
+                      email: 'test@gmail.com.com',
                       password: "password123",
                     }
       post '/api/v1/sessions', params: user_params

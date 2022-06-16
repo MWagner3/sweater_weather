@@ -10,3 +10,9 @@ class MapQuestFacade
     end
   end
 end
+
+
+# if info[:routeError][:errorCode] == 2
+#   return nil
+# else
+#   MapQuestService.get_travel_time(origin, destination)[:route][:formattedTime]

@@ -1,4 +1,4 @@
-# [Sweater Weather]
+# Sweater Weather
 
 ## Table of contents
 - [Overview](#overview)
